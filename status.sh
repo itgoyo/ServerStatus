@@ -20,7 +20,7 @@ service="/usr/lib/systemd/system"
 jq_file="${file}/jq"
 [[ ! -e ${jq_file} ]] && jq_file="/usr/bin/jq"
 
-github_prefix="https://raw.githubusercontent.com/cppla/ServerStatus/master"
+github_prefix="https://github.moeyy.xyz/https://raw.githubusercontent.com/cppla/ServerStatus/master"
 
 NAME="ServerStatus"
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
@@ -141,7 +141,7 @@ Write_server_config() {
             "monthstart": 1
         }
     ]
-}     
+}
 EOF
 }
 
@@ -343,7 +343,7 @@ Set_ServerStatus_server() {
   elif [[ ${server_num} == "7" ]]; then
     Modify_ServerStatus_server_location
   elif [[ ${server_num} == "8" ]]; then
-    Modify_ServerStatus_server_monthstart  
+    Modify_ServerStatus_server_monthstart
   elif [[ ${server_num} == "9" ]]; then
     Modify_ServerStatus_server_all
   elif [[ ${server_num} == "10" ]]; then
@@ -599,7 +599,7 @@ Install_jq() {
     raw_link="https://raw.fastgit.org"
   } || {
     github_link="https://github.com"
-    raw_link="https://raw.githubusercontent.com"
+    raw_link="https://github.moeyy.xyz/https://raw.githubusercontent.com"
   }
   if [[ ! -e ${jq_file} ]]; then
     if [[ ${bit} == "x86_64" ]]; then
@@ -738,8 +738,8 @@ Stop_ServerStatus_server() {
   check_installed_server_status
 if (systemctl -q is-active status-server)
   then
-  systemctl stop status-server 
- else  
+  systemctl stop status-server
+ else
  echo -e "${Error} $NAME 没有运行，请检查 !" && exit 1
 fi
 		if (systemctl -q is-active status-server) then
